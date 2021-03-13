@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+
+  mpd:
+    build: .
+    ports:
+      - "6799:6600"
+    volumes:
+      - /home/johannes/Music/AudioBook:/music:ro
+    devices:
+      - /dev/snd
+    restart: unless-stopped
