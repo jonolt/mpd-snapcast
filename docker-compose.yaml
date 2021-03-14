@@ -3,11 +3,22 @@ version: "3.8"
 services:
 
   mpd:
-    build: .
+    build: ./mpd
     ports:
       - "6799:6600"
     volumes:
-      - /home/johannes/Music/AudioBook:/music:ro
-    devices:
-      - /dev/snd
-    restart: unless-stopped
+      - /home/johannes/Music/:/music:ro
+      - streamfile:/tmp
+  
+  snapserver:
+    build: ./snapserver
+    ports:
+        - "1704:1704"
+        - "1705:1705"
+        - "1780:1780"
+    volumes:
+        - streamfile:/tmp
+
+volumes:
+  streamfile:
+    name: streamfile
