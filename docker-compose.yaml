@@ -5,7 +5,7 @@ services:
   mpd:
     build: ./mpd
     ports:
-      - "6799:6600"
+      - "6660:6600"
     volumes:
       - /home/johannes/Music/:/var/lib/mpd/music/:ro
       - /home/johannes/Documents/docker/snapcast-mdp-alpine/varlib/:/var/lib/mpd/
@@ -14,9 +14,9 @@ services:
   snapserver:
     build: ./snapserver
     ports:
-        - "1704:1704"
-        - "1705:1705"
-        - "1780:1780"
+        - "6861:1704"
+        - "6862:1705"
+        - "6863:1780"
     volumes:
         - streamfile:/tmp
 
