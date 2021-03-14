@@ -7,9 +7,10 @@ services:
     ports:
       - "6799:6600"
     volumes:
-      - /home/johannes/Music/:/music:ro
+      - /home/johannes/Music/:/var/lib/mpd/music/:ro
+      - /home/johannes/Documents/docker/snapcast-mdp-alpine/varlib/:/var/lib/mpd/
       - streamfile:/tmp
-  
+    
   snapserver:
     build: ./snapserver
     ports:
