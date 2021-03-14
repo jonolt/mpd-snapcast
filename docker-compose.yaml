@@ -14,9 +14,9 @@ services:
   snapserver:
     build: ./snapserver
     ports:
-        - "6861:1704"
-        - "6862:1705"
-        - "6863:1780"
+        - "6661:1704"
+        - "6662:1705"
+        - "6663:1780"
     volumes:
         - streamfile:/tmp
 
