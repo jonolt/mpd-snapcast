@@ -6,9 +6,11 @@ FROM alpine
 
 RUN set -xe \
     && apk add --no-cache mpd mpc ncmpc dumb-init \
-    && setcap -r /usr/bin/mpd
+    && setcap -r /usr/bin/mpd \
+    && addgroup mpd root
 
 VOLUME ["/var/lib/mpd"]
+VOLUME ["/var/lib/mpd/music"]
 VOLUME ["/tmp"]
 
 ADD ["start.sh", "/start.sh"]
