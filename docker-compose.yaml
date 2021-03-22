@@ -7,8 +7,8 @@ services:
     ports:
       - "6660:6600"
     volumes:
-      - /home/johannes/MusicNA/:/var/lib/mpd/music/:ro
-      - /home/johannes/Documents/docker/snapcast-mdp-alpine/varlib/:/var/lib/mpd/
+      - ./test_music_ogg:/var/lib/mpd/music/:ro
+      - ./varlib/:/var/lib/mpd/
       - streamfile:/tmp
     
   snapserver:
