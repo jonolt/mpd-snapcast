@@ -1,0 +1,62 @@
+{
+   "cap_add" : [],
+   "cap_drop" : [],
+   "cmd" : "",
+   "cpu_priority" : 90,
+   "devices" : null,
+   "enable_publish_all_ports" : false,
+   "enable_restart_policy" : true,
+   "enabled" : true,
+   "entrypoint_default" : "snapserver",
+   "env_variables" : [
+      {
+         "key" : "PATH",
+         "value" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      }
+   ],
+   "exporting" : false,
+   "id" : "fd41ece5207440cd30c2306eafbd3c9c5786250f91971ee356db41468fdda3a3",
+   "image" : "snapserver:0.1",
+   "is_ddsm" : false,
+   "is_package" : false,
+   "links" : [],
+   "memory_limit" : 134217728,
+   "memory_limit_slider" : 1024,
+   "name" : "snapserver",
+   "network" : [
+      {
+         "driver" : "bridge",
+         "name" : "bridge"
+      }
+   ],
+   "network_mode" : "bridge",
+   "port_bindings" : [
+      {
+         "container_port" : 1704,
+         "host_port" : 1704,
+         "type" : "tcp"
+      },
+      {
+         "container_port" : 1705,
+         "host_port" : 1705,
+         "type" : "tcp"
+      },
+      {
+         "container_port" : 1780,
+         "host_port" : 1780,
+         "type" : "tcp"
+      }
+   ],
+   "privileged" : false,
+   "shortcut" : {
+      "enable_shortcut" : false
+   },
+   "use_host_network" : false,
+   "volume_bindings" : [
+      {
+         "host_volume_file" : "/docker/snaptmp",
+         "mount_point" : "/tmp",
+         "type" : "rw"
+      }
+   ]
+}

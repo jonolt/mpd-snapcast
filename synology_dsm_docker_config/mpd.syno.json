@@ -1,0 +1,62 @@
+{
+   "cap_add" : [],
+   "cap_drop" : [],
+   "cmd" : "mpd --stdout --no-daemon -v",
+   "cpu_priority" : 90,
+   "devices" : null,
+   "enable_publish_all_ports" : false,
+   "enable_restart_policy" : true,
+   "enabled" : true,
+   "entrypoint_default" : "/start.sh",
+   "env_variables" : [
+      {
+         "key" : "PATH",
+         "value" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      }
+   ],
+   "exporting" : false,
+   "id" : "de56dad7b4460a1ae4a5f2055ebf3d3892adf37f07bc789dc0cad3e80e36bc0f",
+   "image" : "mpd:0.1",
+   "is_ddsm" : false,
+   "is_package" : false,
+   "links" : [],
+   "memory_limit" : 536870912,
+   "memory_limit_slider" : 512,
+   "name" : "mpd",
+   "network" : [
+      {
+         "driver" : "bridge",
+         "name" : "bridge"
+      }
+   ],
+   "network_mode" : "bridge",
+   "port_bindings" : [
+      {
+         "container_port" : 6600,
+         "host_port" : 6600,
+         "type" : "tcp"
+      }
+   ],
+   "privileged" : false,
+   "shortcut" : {
+      "enable_shortcut" : false
+   },
+   "use_host_network" : false,
+   "volume_bindings" : [
+      {
+         "host_volume_file" : "/music_mp3",
+         "mount_point" : "/var/lib/mpd/music",
+         "type" : "ro"
+      },
+      {
+         "host_volume_file" : "/docker/mpd",
+         "mount_point" : "/var/lib/mpd/",
+         "type" : "rw"
+      },
+      {
+         "host_volume_file" : "/docker/snaptmp",
+         "mount_point" : "/tmp",
+         "type" : "rw"
+      }
+   ]
+}
